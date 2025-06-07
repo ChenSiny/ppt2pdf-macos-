@@ -19,7 +19,6 @@ def convert_ppt_to_pdf(input_file, libreoffice_path="/Applications/LibreOffice.a
             stderr=subprocess.PIPE,
 
         )
-
         return True, result.stdout.decode()
     except subprocess.CalledProcessError as e:
         return False, f"转换失败：{e.stderr.decode()}"
@@ -47,6 +46,6 @@ def batch_convert(folder):
     print("\nBatch conversion completed.")
 
 if __name__ == "__main__":
-    folder_path = '/Users/cxy/ppt2pdf'  # 修改为你的目录路径
+    folder_path = '/path/to/your/target'  # to change
     batch_convert(folder_path)
 
